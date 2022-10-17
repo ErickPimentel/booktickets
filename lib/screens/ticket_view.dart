@@ -17,9 +17,9 @@ class TicketView extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(
-                color: const Color(0xFF526799),
-                borderRadius: const BorderRadius.only(topLeft: Radius.circular(21), topRight: Radius.circular(21))
+              decoration: const BoxDecoration(
+                color: Color(0xFF526799),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(21), topRight: Radius.circular(21))
               ),
               padding: const EdgeInsets.all(16),
               child: Column(
