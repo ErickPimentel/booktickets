@@ -3,6 +3,7 @@ import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({Key? key}) : super(key: key);
@@ -57,7 +58,20 @@ class TicketView extends StatelessWidget {
                       ThickContainer(),
                       Expanded(child: Container()),
 
-                      Text("London", style: Styles.headLineStyle3.copyWith(color: Colors.white),)
+                      Text("LDN", style: Styles.headLineStyle3.copyWith(color: Colors.white),)
+                    ],
+                  ),
+                  const Gap(3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 100, child:Text('New-York', style: Styles.headLineStyle4.copyWith(color: Colors.white),),
+                      ),
+                      Text("8H 30M", style: Styles.headLineStyle4.copyWith(color: Colors.white),),
+                      SizedBox(
+                        width: 100, child:Text('London', textAlign: TextAlign.end, style: Styles.headLineStyle4.copyWith(color: Colors.white),),
+                      ),
                     ],
                   )
                 ],
