@@ -128,7 +128,48 @@ class TicketView extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Styles.orangeColor,
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(21), bottomRight: Radius.circular(21))
+              ),
+              padding: const EdgeInsets.only(left: 16, top: 10, right: 16, bottom: 16),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("1 MAY", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                          const Gap(5),
+                          Text("DATE", style: Styles.headLineStyle4.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text("8:00 AM", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                          const Gap(5),
+                          Text("Departure time", style: Styles.headLineStyle4.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text("23", style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                          const Gap(5),
+                          Text("Number", style: Styles.headLineStyle4.copyWith(color: Colors.white),)
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             )
+
           ],
         ),
       ),
