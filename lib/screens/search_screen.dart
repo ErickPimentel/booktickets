@@ -1,4 +1,5 @@
 import 'package:booktickets/utils/app_layout.dart';
+import 'package:booktickets/widgets/icon_text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -55,7 +56,11 @@ class SearchScreen extends StatelessWidget {
                 color: const Color(0xFFF4F6FD)
               ),
             ),
-          )
+          ),
+          Gap(AppLayout.getHeight(25)),
+          const AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
+          Gap(AppLayout.getHeight(15)),
+          const AppIconText(icon: Icons.flight_land_rounded, text: "Arrival")
         ],
       ),
     );
