@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/app_layout.dart';
 import 'hotel_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                const Gap(40),
+                Gap(AppLayout.getHeight(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text("Good morning", style: Styles.headLineStyle3,),
-                        const Gap(5),
+                        Gap(AppLayout.getHeight(5)),
                         Text("Book Tickets", style: Styles.headLineStyle1,),
                       ],
                     ),
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                const Gap(25),
+                Gap(AppLayout.getHeight(25)),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -60,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Gap(40),
+                Gap(AppLayout.getHeight(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -75,7 +76,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.only(left: 20),
@@ -83,7 +84,7 @@ class HomeScreen extends StatelessWidget {
               children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket)).toList()
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
@@ -98,7 +99,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          const Gap(15),
+          Gap(AppLayout.getHeight(15)),
           SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 20),
