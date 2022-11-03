@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../utils/app_styles.dart';
+import '../widgets/double_text_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -76,7 +77,8 @@ class SearchScreen extends StatelessWidget {
                 style: Styles.textStyle.copyWith(color: Colors.white,),
               ),
             )
-          )
+          ),
+          const AppDoubleTextWidget(bigText: "Upcoming Flights", smallText: "View all")
         ],
       ),
     );
