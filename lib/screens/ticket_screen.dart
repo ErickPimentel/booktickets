@@ -1,6 +1,7 @@
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_layout.dart';
+import 'package:booktickets/widgets/column_layout.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,14 +38,20 @@ class TicketScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-                      children: [
-                        Column(
-                          children: [
-                            Text("Flutter DB", style: Styles.headLineStyle3,),
-                            Gap(AppLayout.getHeight(5)),
-                            Text("Passenger", style: Styles.headLineStyle3,)
-                          ],
-                        )
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppColumnLayout(
+                          alignment: CrossAxisAlignment.start,
+                          firstText: 'Flutter DB',
+                          secondText: 'Passenger',
+                          isColor: false,
+                        ),
+                        AppColumnLayout(
+                          alignment: CrossAxisAlignment.end,
+                          firstText: '5221 364869',
+                          secondText: 'passport',
+                          isColor: false,
+                        ),
                       ],
                     )
                   ],
