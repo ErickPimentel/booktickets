@@ -18,6 +18,7 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Gap(AppLayout.getHeight(40)),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: AppLayout.getHeight(86),
@@ -68,6 +69,19 @@ class ProfileScreen extends StatelessWidget {
                         Gap(AppLayout.getHeight(5)),
                       ],
                     ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              Column(
+                children: [
+                  InkWell(
+                    onTap: (){
+                      print("You were tapped");
+                    },
+                    child: Text(
+                      "Edit",
+                      style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w300),),
                   )
                 ],
               )
