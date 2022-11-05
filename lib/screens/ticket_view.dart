@@ -1,6 +1,7 @@
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/widgets/column_layout.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -40,21 +41,7 @@ class TicketView extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: AppLayout.getHeight(24),
-                            child: LayoutBuilder(
-
-                              builder: (BuildContext context, BoxConstraints constraints) {
-                                return Flex(
-                                    direction: Axis.horizontal,
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate((constraints.constrainWidth()/6).floor(), (index) => SizedBox(
-                                      width: 3, height: 1, child: DecoratedBox(decoration: BoxDecoration(
-                                        color: isColor == null?Colors.white : Colors.grey.shade300
-                                    ),),
-                                    ))
-                                );
-                              },
-                            ),
+                            child: AppLayoutBuilderWidget(sections: 6)
                           ),
                           Center(child: Transform.rotate(angle: 1.5, child: Icon(Icons.local_airport_rounded, color: isColor==null? Colors.white : const Color(0xFFBACCF7)))),
                         ]

@@ -2,12 +2,14 @@ import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/widgets/column_layout.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../utils/app_styles.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({Key? key}) : super(key: key);
@@ -31,8 +33,9 @@ class TicketScreen extends StatelessWidget {
                 padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
                 child: TicketView(ticket: ticketList[0], isColor: true,)
               ),
+              SizedBox(height: 1,),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                 margin: EdgeInsets.symmetric(horizontal: 15),
                 color: Colors.white,
                 child: Column(
@@ -53,8 +56,79 @@ class TicketScreen extends StatelessWidget {
                           isColor: false,
                         ),
                       ],
-                    )
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    const AppLayoutBuilderWidget(sections: 15, isColor: false, width: 5,),
+                    Gap(AppLayout.getHeight(20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        AppColumnLayout(
+                          alignment: CrossAxisAlignment.start,
+                          firstText: '0055 444 77147',
+                          secondText: 'Number of E-ticket',
+                          isColor: false,
+                        ),
+                        AppColumnLayout(
+                          alignment: CrossAxisAlignment.end,
+                          firstText: 'B2SG28',
+                          secondText: 'Booking code',
+                          isColor: false,
+                        ),
+                      ],
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    const AppLayoutBuilderWidget(sections: 15, isColor: false, width: 5,),
+                    Gap(AppLayout.getHeight(20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset("assets/images/visa.png", scale: 11,),
+                                Text(" *** 2462", style: Styles.headLineStyle3,)
+                              ],
+                            ),
+                            Gap(AppLayout.getHeight(5)),
+                            Text("Payment method", style: Styles.headLineStyle4,)
+                          ],
+                        ),
+                        const AppColumnLayout(
+                          alignment: CrossAxisAlignment.end,
+                          firstText: '\$249.99',
+                          secondText: 'Price',
+                          isColor: false,
+                        ),
+                      ],
+                    ),
                   ],
+                ),
+              ),
+              SizedBox(height: 1,),
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(AppLayout.getHeight(21)),
+                      bottomLeft: Radius.circular(AppLayout.getHeight(21)))
+                ),
+                margin: EdgeInsets.only(left: 15, right: 15),
+                padding: EdgeInsets.only(top: 15, bottom: 15),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
+                    child: BarcodeWidget(
+                      barcode: Barcode.code128(),
+                      data: 'https:github.com/martinovovo',
+                      drawText: false,
+                      color: Styles.textColor,
+                      width: double.infinity,
+                      height: 70,
+                    ),
+                  ),
                 ),
               )
             ],
