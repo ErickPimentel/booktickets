@@ -213,6 +213,19 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          Gap(AppLayout.getHeight(25)),
+          InkWell(
+            onTap: () => print("You were tapped"),
+            child: Center(
+              child: Text(
+                "How to get more miles",
+                style: Styles.textStyle.copyWith(
+                  color: Styles.primaryColor,
+                  fontWeight: FontWeight.w500
+                ),
+              ),
+            ),
           )
         ],
       ),
