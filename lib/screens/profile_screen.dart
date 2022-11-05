@@ -86,6 +86,32 @@ class ProfileScreen extends StatelessWidget {
                 ],
               )
             ],
+          ),
+          Gap(AppLayout.getHeight(8)),
+          Divider(color: Colors.grey.shade300,),
+          Stack(
+            children: [
+              Container(
+                height: AppLayout.getHeight(90),
+                decoration: BoxDecoration(
+                  color: Styles.primaryColor,
+                  borderRadius: BorderRadius.circular(AppLayout.getHeight(18))
+                ),
+              ),
+              Positioned(
+                right: -45,
+                top: -40,
+                child: Container(
+                padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 18, color: Color(0xFF264CD2)
+                    )
+                ),
+              ),)
+
+            ],
           )
         ],
       ),
