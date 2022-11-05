@@ -89,6 +89,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           Gap(AppLayout.getHeight(8)),
           Divider(color: Colors.grey.shade300,),
+          Gap(AppLayout.getHeight(8)),
           Stack(
             children: [
               Container(
@@ -109,10 +110,44 @@ class ProfileScreen extends StatelessWidget {
                     border: Border.all(width: 18, color: Color(0xFF264CD2)
                     )
                 ),
-              ),)
+              ),),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(20), vertical: AppLayout.getHeight(20)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      child: Icon(
+                      FluentSystemIcons.ic_fluent_lightbulb_circle_filled,
+                      color: Styles.primaryColor, size: 27,),
+                      maxRadius: 25,
+                      backgroundColor: Colors.white,
+                    ),
+                    Gap(AppLayout.getHeight(12)),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("You\'ve got a new award",
+                        style: Styles.headLineStyle2.copyWith(
+                          fontWeight: FontWeight.bold, color: Colors.white
+                          ),
+                        ),
+                        Text("You have 95 flights in a year",
+                          style: Styles.headLineStyle2.copyWith(
+                              fontWeight: FontWeight.bold, color: Colors.white.withOpacity(0.9), fontSize: 16
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )
 
             ],
-          )
+          ),
+
         ],
       ),
     );
