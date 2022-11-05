@@ -114,8 +114,8 @@ class TicketScreen extends StatelessWidget {
                       bottomRight: Radius.circular(AppLayout.getHeight(21)),
                       bottomLeft: Radius.circular(AppLayout.getHeight(21)))
                 ),
-                margin: EdgeInsets.only(left: 15, right: 15),
-                padding: EdgeInsets.only(top: 15, bottom: 15),
+                margin: EdgeInsets.only(left: AppLayout.getHeight(15), right: AppLayout.getHeight(15)),
+                padding: EdgeInsets.only(top: AppLayout.getHeight(20), bottom: AppLayout.getHeight(20)),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(15)),
                   child: ClipRRect(
@@ -130,7 +130,12 @@ class TicketScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              Gap(AppLayout.getHeight(20)),
+              Container(
+                  padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                  child: TicketView(ticket: ticketList[0],)
+              ),
             ],
           )
         ]
